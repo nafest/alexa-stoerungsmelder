@@ -1,0 +1,22 @@
+{
+  "name": "alexa-stoerungsmelder",
+  "version": "1.0.0",
+  "description": "alexa skill for s bahn muenchen stoerungsmeldungen",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "alexa-sdk": "^1.0.6",
+    "cheerio": "^0.22.0",
+    "request": "^2.78.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Stefan Winkler",
+  "license": "MIT"
+}

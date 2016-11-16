@@ -1,0 +1,141 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>optivo&reg; broadmail - Newsticker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta http-equiv="expires" content="0" >
+    <meta http-equiv="pragma" content="no-cache" >
+    <meta http-equiv="Cache-Control" content="no-cache" >
+    <link rel="stylesheet" type="text/css" href="resources/styles.css">
+    <script type="text/javascript" src="resources/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="resources/jquery.ba-postmessage.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var parent_url = decodeURIComponent(document.location.hash.replace(/^#/, ''));
+            function setHeight() {
+                $.postMessage({ if_height: $('body').outerHeight(true) }, parent_url, parent);
+            }
+
+            function showPage(pageNum) {
+                var $pageContentContainer = $('#pageContentContainer'), $page=$('#page'+pageNum),$button=$('#button'+pageNum);
+                $pageContentContainer.empty();
+                $page.clone().appendTo('#pageContentContainer');
+                $pageContentContainer.find('.hiddenPage').removeClass('hiddenPage');
+                $pageContentContainer.find('.historyContainer').each(function(index, container) {
+                    $(container).find('.show').click(function (evt) {
+                        $(container).find('.hiddenHistory').slideToggle(400, setHeight);
+                        $(this).text($(this).text() == 'Meldehistorie zu dieser Störung einsehen' ? 'Meldehistorie schließen' : 'Meldehistorie zu dieser Störung einsehen');
+                    });
+                });
+                $('.button.currentPageButton').attr('href', 'javascript:void(0)').removeClass('currentPageButton');
+                $button.removeAttr('href').addClass('currentPageButton');
+                $('.archivNotification').find('.notification').css("width","600px");
+                $('.notification').find('.rightColumn').css("width","530px");
+                setHeight();
+            }
+
+            
+            $('<a href="javascript:void(0)" id="button1" class="button hiddenButton">1</a>').appendTo('#pageButtonContainer').click(function () { showPage(1); });
+            showPage(1);
+        });
+    </script>
+    <style type="text/css">
+        a { margin-right:10px; }
+        div.hiddenPage { display: none; }
+        div.hiddenHistory { display: none; }
+        a.hiddenButton { display: none; }
+    </style>
+</head>
+
+<body>
+
+<div id="pageContentContainer"></div>
+<div id="pageButtonContainer"></div>
+<div id="page1" class="hiddenPage">
+<div class="notificationsFrame">
+    
+    <div class="notification">
+        <div class="leftColumn">
+            
+            <img src="resources/images/icons/S-1.png" alt="S 1" title="S 1" /><br /><br />
+            
+            <img src="resources/images/icons/S-2.png" alt="S 2" title="S 2" /><br /><br />
+            
+            <img src="resources/images/icons/S-3.png" alt="S 3" title="S 3" /><br /><br />
+            
+            <img src="resources/images/icons/S-4.png" alt="S 4" title="S 4" /><br /><br />
+            
+            <img src="resources/images/icons/S-6.png" alt="S 6" title="S 6" /><br /><br />
+            
+            <img src="resources/images/icons/S-7.png" alt="S 7" title="S 7" /><br /><br />
+            
+            <img src="resources/images/icons/S-8.png" alt="S 8" title="S 8" /><br /><br />
+            
+            <img src="resources/images/icons/sbahn.png" alt="S-Bahn" title="S-Bahn" /><br /><br />
+            
+            <br />
+        </div>
+        <div class="rightColumn">
+            <h1>Stammstrecke: Verz&ouml;gerungen nach vorangegangenem Polizeieinsatz (Stand 15.11.2016, 10:00 Uhr)</h1>
+            <!-- <b>Betroffene Strecken:</b>-->
+            <div class="tracks">
+                
+                <b>S 1:</b>
+                M&uuml;nchen Ost - M&uuml;nchen Hbf - Freising / Flughafen<br />
+
+                
+                <b>S 2:</b>
+                Erding - M&uuml;nchen Hbf - Dachau - Petershausen / Altom&uuml;nster<br />
+
+                
+                <b>S 3:</b>
+                Mammendorf - M&uuml;nchen Hbf - Holzkirchen<br />
+
+                
+                <b>S 4:</b>
+                Geltendorf - M&uuml;nchen Hbf - Ebersberg<br />
+
+                
+                <b>S 6:</b>
+                Tutzing - M&uuml;nchen Hbf - Zorneding<br />
+
+                
+                <b>S 7:</b>
+                Wolfratshausen - M&uuml;nchen Hbf - Kreuzstra&szlig;e<br />
+
+                
+                <b>S 8:</b>
+                Herrsching - M&uuml;nchen Hbf - Flughafen<br />
+
+                
+                <b>S1/S8:</b>
+                Alle Z&uuml;ge Richtung Flughafen<br />
+
+                
+                <b>S1-S8:</b>
+                Alle Z&uuml;ge auf der Stammstrecke (M&uuml;nchen Ost - Pasing)<br />
+
+                
+            </div>
+            <br>
+            <b>Meldung:</b><br>
+            <div>
+                <p>
+                    wegen eines vorangegangenen Polizeieinsatzes kommt es auf der Stammstrecke derzeit in beiden Richtungen zu Beeintr&auml;chtigungen. Bitte rechnen Sie mit Verz&ouml;gerungen von bis zu 15 Minuten. <br /><br />Die Abweichung in der Linienf&uuml;hrung der Linien S 1 und S 6 werden in einem gesonderten Streckenagenten kommuniziert.
+                </p>
+            </div>
+            <span class="lastUpdateTime">
+                Letzte Aktualisierung: 2016-11-15 10:02:58
+            </span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+</div>
+</body>
+</html>
